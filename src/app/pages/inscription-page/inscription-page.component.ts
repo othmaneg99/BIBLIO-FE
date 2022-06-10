@@ -24,6 +24,6 @@ export class InscriptionPageComponent implements OnInit {
         console.log(err);
       }
     )
-    } 
+    }
 
 }

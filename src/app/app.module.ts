@@ -8,7 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TestComponent } from './test/test.component';
-
+import { ConnectionPageComponent } from './pages/connection-page/connection-page.component';
 
 
 @NgModule({
@@ -18,15 +18,19 @@ import { TestComponent } from './test/test.component';
     TestComponent
   ],
   imports: [
+
+
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {path: 'inscription', component: InscriptionPageComponent},
-
+      {path: 'connection', component: ConnectionPageComponent},
     ]),
     NgbModule,
     FormsModule,
     HttpClientModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
