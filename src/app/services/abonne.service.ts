@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class AbonneService {
 
   constructor(private http: HttpClient) { }
-  api = "localhost:9090"
+  api = "http://localhost:9090"
   public saveAbonne(abonneData:any) {
     return this.http.post(this.api + '/register', abonneData)
   }
