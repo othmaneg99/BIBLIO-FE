@@ -1,23 +1,47 @@
-    <form #registerForm="ngForm" (ngSubmit)="saveAbonne(registerForm)">
-        <div class="from-group">
-            <label for="nom">Nom : </label>
-            <input type="text" #name (ngModel)="name" name="nom" id="nom" class="form-control" placeholder="Nom...">
-        </div>
-        <div class="from-group">
-            <label for="prenom">Prénom : </label>
-            <input type="text" #prenom (ngModel)="prenom" name="prenom" id="prenom" class="form-control"
-                placeholder="Prénom...">
-        </div>
-        <div class="from-group">
-            <label for="adresse">Adresse : </label>
-            <input type="text" #adresse (ngModel)="adresse" name="adresse" id="adresse" class="form-control"
-                placeholder="Adresse...">
-        </div>
-        <div class="from-group">
-            <button type="submit" class="btn btn-primary">S'inscrire</button>
-        </div>
-    
-    </form>
-<router-outlet></router-outlet>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+  <form #registerForm="ngForm" (ngSubmit)="saveAbonne(registerForm)">
+    <div class="container">
+    <h1>Inscription</h1>
+    <p>Merci de remplir ce formulaire pour créer un compte.</p>
+    <hr>
+
+    <label for="nom">Nom : </label>
+    <input type="text" #name (ngModel)="name" name="nom" id="nom" class="form-control" placeholder="Nom..." required>
+
+    <label for="prenom">Prénom : </label>
+    <input type="text" #prenom (ngModel)="prenom" name="prenom" id="prenom" class="form-control"
+                placeholder="Prénom..." required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email..." name="email" id="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+    <label for="adresse">Adresse : </label>
+    <input type="text" #adresse (ngModel)="adresse" name="adresse" id="adresse" class="form-control"
+                    placeholder="Adresse..." required>
+    <hr>
+    <p>En créant un compte, vous acceptez nos <a class="text-primary" href="#">Terms & Privacy</a>.</p>
+
+    <button type="submit" class="btn btn-primary">S'inscrire</button>
+    <div class="signin">
+      <p>Already have an account? <a class="text-primary"href="./connection">Sign in</a>.</p>
+    </div>
+  </div>
+
+
+</form>
+
+</body>
+</html>
+
 
 
