@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
         
         if(this.authService.isAdmin(resp)){
           this.router.navigate(['/admin/dashboard'])
+          
         }else {
           this.router.navigate(['/user/dashboard'])
         }

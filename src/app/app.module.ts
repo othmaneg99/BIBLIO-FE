@@ -22,6 +22,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select'
 import {MatListModule} from "@angular/material/list";
+import { ListGenresComponent } from './pages/admin/list-genres/list-genres.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatListModule} from "@angular/material/list";
     UserSidebarComponent,
     AdminSidebarComponent,
     HeaderComponent,
-    LivresListComponent
+    LivresListComponent,
+    ListGenresComponent
   ],
   imports: [
     MatListModule,

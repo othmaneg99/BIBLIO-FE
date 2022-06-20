@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>genres</title>
+</head>
+
+<body>
+
+    <header></header>
+<div class="row mt-3">
+        <div class="col-3">
+            <admin-sidebar></admin-sidebar>
+        </div>
+<div class="col-9">
+<style>
+    .toggle {
+        display: none;
+    }
+    .toggleInput {
+        display: none;
+    }
+</style>
+<script>
+
+</script>
+    <div class="col-4" (click)="this.toggle()">
+        <div class="col-6 card-header mb-3 d-flex" ><span>Nouveau genre </span><mat-icon class="ml">expand_more</mat-icon></div>
+        <div class="card-body createform" >
+
+            <form #f="ngForm" (ngSubmit)="onSaveGenre(f.value)">
+                <label for="libelle" class="control-label">Nom : </label>
+                <input class="form-control" type="text" name="libelle" id="libelle" ngModel>
+                <button class="btn btn-success mt-3">+ ajouter </button>
+            </form>
+        </div>
+
+    </div>
+
+    <table class="table table-hover">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom Genre</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+    <tr *ngFor="let g of genres">
+        
+
+        <td class="text">{{g.id}}</td>
+        <td class="text">{{g.libelle}}</td>
+        <td>
+            <button class="btn btn-light" >modifier</button>
+            <button class="btn btn-danger ml" (click)="onDeleteCategory(g)" ><mat-icon>delete</mat-icon></button>
+        </td>
+    </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+</div>
+</div>
+
+
+
+</body>
+
+</html>
