@@ -1,0 +1,9 @@
+.logo {
+    width: 170px;
+    cursor: pointer;
+    height: 80px;
+}
+
+.action-btn {
+    margin-right: 10px;
+}
