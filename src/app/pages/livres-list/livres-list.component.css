@@ -1,0 +1,44 @@
+.card-img-top {
+    width: 100%;
+    height: 30vh;
+    object-fit: contain;
+}
+
+.sticky {
+    position: sticky;
+}
+
+.article-items {
+    overflow-y: auto;
+    height: 70vh !important;
+    padding-top: 5px;
+}
+
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+}
+
+.margin-left {
+    margin-left: 20px;
+}
+
+.search-input {
+    width: 100%
+}
+
+
+
+.article-card:hover {
+    border: 2px solid #037db2;
+    color: #fff;
+
+
+
+    cursor: pointer;
+}
+                .article-card:hover .card-body {
+            background-color: #037db2;
+        }

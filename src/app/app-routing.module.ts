@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InscriptionPageComponent } from './pages/inscription-page/inscription-page.component';
-import { ConnectionPageComponent } from './pages/connection-page/connection-page.component';
-import { TestComponent } from './test/test.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { LivresListComponent } from './pages/livres-list/livres-list.component';
+
 
 
 const routes: Routes = [
 
-  { path: '', component: TestComponent },
+  { path: '', component: HomePageComponent },
   { path: 'Inscription', component: InscriptionPageComponent },
-  { path: 'Connection', component: ConnectionPageComponent },
+  { path: 'user/livres', component: LivresListComponent }
+  
 ];
 
 @NgModule({

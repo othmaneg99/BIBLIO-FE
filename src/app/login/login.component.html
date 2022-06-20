@@ -1,0 +1,23 @@
+<form  (submit)="login()">
+
+    <div class="container">
+        <h1>Se connecter</h1>
+        <hr>
+
+        <label for="email">Username</label>
+        <input type="text" placeholder="username..." id="username" name="username"  required [(ngModel)]="user.username">
+        <label for="password">Password</label>
+        <input type="password" placeholder="Mot de passe" name="password" id="password" required
+            [(ngModel)]="user.password">
+        <input type="checkbox" name="remember" class="form-check-input" id="remember_me" />
+        <label class="form-check-label " for="remember_me">Rester connécté</label>
+
+        <hr>
+        <p>En créant un compte, vous acceptez nos <a class="text-primary" href="#">Termes & Conditions</a>.</p>
+
+        <button type="submit" class="btn btn-primary">Se connecter</button>
+        <div class="login">
+            <p>Vous n'avez pas un compte? <a class="text-primary" href="/inscription">Inscrivez-vous</a>.</p>
+        </div>
+    </div>
+</form>

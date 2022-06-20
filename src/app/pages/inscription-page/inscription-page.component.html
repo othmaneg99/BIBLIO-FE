@@ -5,43 +5,48 @@
 
 </head>
 <body>
-
+    <div class="container col-6 ">
   <form #registerForm="ngForm" (ngSubmit)="saveAbonne(registerForm)">
-    <div class="container">
+
     <h1>Inscription</h1>
-    <p>Merci de remplir ce formulaire pour créer un compte.</p>
+    <p class="mb-3 ">Merci de remplir ce formulaire pour créer un compte.</p>
     <hr>
 
-    <label for="nom">Nom : </label>
-    <input type="text" #name (ngModel)="name" name="nom" id="nom" class="form-control" placeholder="Nom..." required>
-
-    <label for="prenom">Prénom : </label>
-    <input type="text" #prenom (ngModel)="prenom" name="prenom" id="prenom" class="form-control"
-                placeholder="Prénom..." required>
-
-    <label for="email">Email</label>
-    <input type="text" placeholder="Enter Email..." name="email" id="email" required>
-
-    <label for="psw">Password</label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-
-    <label for="adresse">Adresse : </label>
-    <input type="text" #adresse (ngModel)="adresse" name="adresse" id="adresse" class="form-control"
-                    placeholder="Adresse..." required>
-    <hr>
-    <p>En créant un compte, vous acceptez nos <a class="text-primary" href="#">Terms & Privacy</a>.</p>
-
-    <button type="submit" class="btn btn-primary">S'inscrire</button>
-    <div class="signin">
-      <p>Already have an account? <a class="text-primary"href="./connection">Sign in</a>.</p>
+  <div class="row">
+    <div class="col-6">
+      <label for="nom">Nom</label>
+      <input type="text" #name (ngModel)="name" name="nom" id="nom" class="form-control" placeholder="Nom..." required>
+    </div>
+    <div class="col-6">
+      <label for="prenom">Prénom</label>
+      <input type="text" #prenom (ngModel)="prenom" name="prenom" id="prenom" class="form-control" placeholder="Prénom..."
+        required>
     </div>
   </div>
 
 
+
+    <label for="email">Email</label>
+    <input type="text" placeholder="Email..." name="email" id="email" required>
+
+    <label for="psw">Mot de passe</label>
+    <input type="password" placeholder="Mot de passe..." name="psw" id="psw" required>
+
+    <label for="adresse">Adresse : </label>
+    <input type="text" #adresse (ngModel)="adresse" name="adresse" id="adresse" class="form-control"
+                    placeholder="Adresse..." required>
+
+
+
+    <button type="submit" class="btn btn-primary">S'inscrire</button>
+    <div class="signin">
+      <p>Vous avez déja un compte? <a class="text-primary" href="./connection">Se connecter</a>.</p>
+    </div>
+
+
+
 </form>
+  </div>
 
 </body>
 </html>
-
-
-
