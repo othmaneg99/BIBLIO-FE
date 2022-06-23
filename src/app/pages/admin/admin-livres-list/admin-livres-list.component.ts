@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { ResourceService } from 'src/app/services/resource.service';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
-  selector: 'app-livres-list',
-  templateUrl: './livres-list.component.html',
-  styleUrls: ['./livres-list.component.css']
+  selector: 'app-admin-livres-list',
+  templateUrl: './admin-livres-list.component.html',
+  styleUrls: ['./admin-livres-list.component.css']
 })
-export class LivresListComponent implements OnInit {
+export class AdminLivresListComponent implements OnInit {
+closeResult: string | undefined;
 public livres = <any>{};
 public genres = <any>{};
 public editeurs = <any>{};
 public rayons = <any>{};
 public newForm:any;
-
-  constructor(public resourceService:ResourceService) { }
+public l = <any>{};
+  constructor(public resourceService:ResourceService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getArticles("/livre")
@@ -55,7 +58,7 @@ public newForm:any;
     private getEditeurs() {
     this.resourceService.getResource("/editeurs")
       .subscribe(data => {
-        console.log(data)
+
         this.editeurs = data;
 
       })
@@ -64,7 +67,7 @@ public newForm:any;
       private getRayons() {
     this.resourceService.getResource("/rayons")
       .subscribe(data => {
-        console.log(data)
+
         this.rayons = data;
 
       })
@@ -107,7 +110,39 @@ public newForm:any;
       })
 
 }
+      onDeleteLivre(l: any) {
+    let conf = ("vous etes sures de vouloir supprimer le livre : " + l.titre + "?")
+
+    if (conf) {
+      this.resourceService.deleteResource("/livre/delete/"+ l.id).subscribe(
+        data => {
+          this.getArticles("/livre")
+        }
+      )
+    }
+  }
 refresh() {
 this.getArticles("/livre")
 }
+
+  openLg(content:any,l:any) {
+          this.l = l;
+      console.log(l)
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title',size: 'lg'}).result.then((result) => {
+
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
 }

@@ -12,23 +12,56 @@
         <div class="col-3">
             <user-sidebar></user-sidebar>
         </div>
-<div class="col-9 mt-3 flex-column align-items-start">
+<div class="col-9 mt-3 flex-column align-items-start ">
+                            <div class="container-fluid col-12 mr-3 d-flex justify-content-start">
+                                <div class="col-2">
+                                    <button color="primary" (click)="refresh()" class="mb-3 w-100 mr-3" mat-raised-button>
+                                        rénitialiser
+                                    </button>
+                                </div>
+                            
+                            </div>
+        <div class="col-12 container-fluid d-flex justify-content-between   align-items-center ">
 
-        <div class="row justify-content-start align-items-center flex-nowrap">
+            <div class="col-2" *ngIf="genres">
+                <form >
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>Par Genre</mat-label>
+                                                <select  id="genreSelect" matNativeControl (change)="getLivresByGenre($event)">
+                                                    <option *ngFor="let g of genres" [value]="g.id">{{g.libelle}}</option>
+                                                </select>
+                                            </mat-form-field>
+                </form>
 
-            <div class="col-3" *ngIf="genres">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Par Genre</mat-label>
-                            <select matNativeControl>
-                                <option *ngFor="let g of genres" [value]="g">{{g.libelle}}</option>
-                            </select>
-                        </mat-form-field>
                     </div>
-                            <div class="col-4">
+                                                <div class="col-2" *ngIf="rayons">
+                                                    <form>
+                                                        <mat-form-field appearance="fill">
+                                                            <mat-label>Par Rayon</mat-label>
+                                                            <select id="rayonSelect" matNativeControl (change)="getLivresByRayon($event)">
+                                                                <option *ngFor="let r of rayons" [value]="r.id">{{r.libelle}}</option>
+                                                            </select>
+                                                        </mat-form-field>
+                                                    </form>
+                                                
+                                                </div>
+                            <div class="col-2" *ngIf="editeurs">
+                                <form>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Par Editeur</mat-label>
+                                        <select id="editeurSelect" matNativeControl (change)="getLivresByEditeur($event)">
+                                            <option *ngFor="let e of editeurs" [value]="e.id">{{e.libelle}}</option>
+                                        </select>
+                                    </mat-form-field>
+                                </form>
+                            
+                            </div>
+   
+                            <div class="col-5">
                                 <div class="search-bar">
                                     <form #f='ngForm' (ngSubmit)="onChercher(f.value)">
                                         <mat-form-field appearance="fill" class="search-input">
-                                            <mat-label>rechercher par titre</mat-label>
+                                            <mat-label>rechercher par titre ou par auteur</mat-label>
                                             <input type="text" name="keyword" matInput ngModel>
                                             <button mat-icon-button matSuffix>
                                                 <mat-icon>search</mat-icon>
@@ -38,18 +71,15 @@
                                 </div>
                             
         </div>
-                <div class="col-2">
-                    <button color="primary" class="mb-3 w-100" mat-raised-button>
-                        rénitialiser
-                    </button>
-                </div>
+
 
             </div>
+
 
         <div class="col-12 mt-1 ">
             
   
-                <div class="grid-container article-items">
+    <div class="grid-container article-items">
     
         <div style="" *ngFor="let l of livres" class="">
             <div class="card article-card" style="width: 16rem;">
@@ -61,36 +91,7 @@
                 </div>
             </div>
         </div>
-                <div style="" *ngFor="let l of livres" class="">
-                    <div class="card article-card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{this.resourceService.host+'/livre/image/'+l.id}}" alt="livre image">
-                        <div class="card-body">
-                            <h3 class="card-title">{{l.titre}}</h3>
-                            <p class="card-text"></p>
-                            <a href="#" class="btn btn-light" routerLink="{{'/article/'+l.id}}">détails ></a>
-                        </div>
-                    </div>
-                </div>
-                        <div style="" *ngFor="let l of livres" class="">
-                            <div class="card article-card" style="width: 16rem;">
-                                <img class="card-img-top" src="{{this.resourceService.host+'/livre/image/'+l.id}}" alt="livre image">
-                                <div class="card-body">
-                                    <h3 class="card-title">{{l.titre}}</h3>
-                                    <p class="card-text"></p>
-                                    <a href="#" class="btn btn-light" routerLink="{{'/article/'+l.id}}">détails ></a>
-                                </div>
-                            </div>
-                        </div>
-                                <div style="" *ngFor="let l of livres" class="">
-                                    <div class="card article-card" style="width: 16rem;">
-                                        <img class="card-img-top" src="{{this.resourceService.host+'/livre/image/'+l.id}}" alt="livre image">
-                                        <div class="card-body">
-                                            <h3 class="card-title">{{l.titre}}</h3>
-                                            <p class="card-text"></p>
-                                            <a href="#" class="btn btn-light" routerLink="{{'/article/'+l.id}}">détails ></a>
-                                        </div>
-                                    </div>
-                                </div>
+                
             </div>
         
     </div>

@@ -23,6 +23,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select'
 import {MatListModule} from "@angular/material/list";
 import { ListGenresComponent } from './pages/admin/list-genres/list-genres.component';
+import { AdminLivresListComponent } from './pages/admin/admin-livres-list/admin-livres-list.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { ListGenresComponent } from './pages/admin/list-genres/list-genres.compo
     AdminSidebarComponent,
     HeaderComponent,
     LivresListComponent,
-    ListGenresComponent
+    ListGenresComponent,
+    AdminLivresListComponent
   ],
   imports: [
     MatListModule,

@@ -1,5 +1,3 @@
-
-
 .card-img-top {
     width: 100%;
     height: 30vh;
@@ -41,6 +39,10 @@
 
     cursor: pointer;
 }
-                .article-card:hover .card-body {
-            background-color: #037db2;
-        }
+
+.article-card:hover .card-body {
+    background-color: #037db2;
+}
+.ml {
+    margin-left: 20px;
+}

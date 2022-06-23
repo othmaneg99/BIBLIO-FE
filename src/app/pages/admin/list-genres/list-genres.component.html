@@ -27,8 +27,8 @@
 <script>
 
 </script>
-    <div class="col-4" (click)="this.toggle()">
-        <div class="col-6 card-header mb-3 d-flex" ><span>Nouveau genre </span><mat-icon class="ml">expand_more</mat-icon></div>
+    <div class="col-4" >
+        <div class="col-6 card-header mb-3 d-flex" (click)="this.toggle()"><span>Nouveau genre </span><mat-icon class="ml">expand_more</mat-icon></div>
         <div class="card-body createform" >
 
             <form #f="ngForm" (ngSubmit)="onSaveGenre(f.value)">
