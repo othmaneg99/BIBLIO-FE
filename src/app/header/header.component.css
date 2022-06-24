@@ -5,5 +5,11 @@
 }
 
 .action-btn {
-    margin-right: 10px;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.header {
+    background-color: rgb(255, 255, 255);
+    Box-shadow:0 10px 20px rgba(0,0,0,0.11), 0 6px 6px rgba(0,0,0,0.19);
 }

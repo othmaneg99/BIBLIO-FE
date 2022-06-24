@@ -4,6 +4,24 @@
     object-fit: contain;
 }
 
+.col-3 {
+    flex: 0 0 auto;
+    width: 15%;
+}
+
+
+.col-9 {
+    width: 83%;
+  margin-left: 1%;
+    
+    
+    background-color: rgba(255, 255, 255, 1);
+    
+    border-radius: 10px;
+    padding: 16px;
+    
+}
+
 .sticky {
     position: sticky;
 }
@@ -46,3 +64,15 @@
 .ml {
     margin-left: 20px;
 }
+
+
+
+body{
+    
+  
+    justify-content: center;
+    background-image: url('/assets/library.jpg');
+    background-repeat: repeat-y;
+    background-size: cover;
+  }
+

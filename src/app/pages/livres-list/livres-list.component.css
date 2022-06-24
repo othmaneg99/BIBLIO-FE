@@ -44,3 +44,31 @@
                 .article-card:hover .card-body {
             background-color: #037db2;
         }
+
+
+
+.col-3 {
+    flex: 0 0 auto;
+    width: 15%;
+}
+
+.col-9 {
+    width: 83%;
+  margin-left: 1%;
+    
+    
+    background: rgba(255, 255,255, 0.5);
+    
+    border-radius: 10px;
+    padding: 16px;
+    
+}
+
+body{
+    
+  
+    justify-content: center;
+    background-image: url('/assets/library.jpg');
+    background-repeat: repeat-y;
+    background-size: cover;
+  }

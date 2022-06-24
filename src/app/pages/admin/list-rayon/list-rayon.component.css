@@ -28,11 +28,12 @@
     border-style: solid;
 }
 
+
 body{
     
   
-    
-    background-image: url('/assets/library.jpg');
-    background-repeat: repeat-y;
-    background-size: cover;
-  }
+  justify-content: center;
+  background-image: url('/assets/library.jpg');
+  background-repeat: repeat-y;
+  background-size: cover;
+}

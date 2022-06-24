@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>genres</title>
+    <title>rayons</title>
 </head>
 
 <body>
@@ -28,10 +28,10 @@
 
 </script>
     <div class="col-4" >
-        <div class="col-6 card-header mb-3 d-flex" (click)="this.toggle()"><span>Nouveau genre </span><mat-icon class="ml">expand_more</mat-icon></div>
+        <div class="col-6 card-header mb-3 d-flex" (click)="this.toggle()"><span>Nouveau rayon </span><mat-icon class="ml">expand_more</mat-icon></div>
         <div class="card-body createform" >
 
-            <form #f="ngForm" (ngSubmit)="onSaveGenre(f.value)">
+            <form #f="ngForm" (ngSubmit)="onSaveRayon(f.value)">
                 <label for="libelle" class="control-label">Nom : </label>
                 <input class="form-control" type="text" name="libelle" id="libelle" ngModel>
                 <button class="btn btn-success mt-3">+ ajouter </button>
@@ -44,13 +44,13 @@
         <thead class="table-light">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nom Genre</th>
+                <th scope="col">Num Rayon</th>
                 <th scope="col">Actions</th>
                 <th scope="col">Supprimer</th>
             </tr>
         </thead>
         <tbody>
-    <tr *ngFor="let g of genres">
+    <tr *ngFor="let g of rayons">
         
 
         <td class="text">{{g.id}}</td>

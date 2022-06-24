@@ -24,6 +24,7 @@ import { MatSelectModule } from '@angular/material/select'
 import {MatListModule} from "@angular/material/list";
 import { ListGenresComponent } from './pages/admin/list-genres/list-genres.component';
 import { AdminLivresListComponent } from './pages/admin/admin-livres-list/admin-livres-list.component';
+import { ListRayonsComponent } from './pages/admin/list-rayon/list-rayon.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AdminLivresListComponent } from './pages/admin/admin-livres-list/admin-
     HeaderComponent,
     LivresListComponent,
     ListGenresComponent,
-    AdminLivresListComponent
+    AdminLivresListComponent,
+    ListRayonsComponent
   ],
   imports: [
     MatListModule,

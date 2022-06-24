@@ -1,0 +1,15 @@
+.col-3 {
+    flex: 0 0 auto;
+    width: 15%;
+}
+.col-9 {
+    width: 83%;
+  margin-left: 1%;
+    
+    
+    background: rgba(0, 0,0, 0.1);
+    
+    border-radius: 10px;
+    padding: 16px;
+    
+}
